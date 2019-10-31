@@ -1,0 +1,15 @@
+ {
+    "name": "Creddle Link Icons",
+    "version": "0.0.1",
+    "description": "GitHub and DevPost icons for your creddle resume!",
+    "content_scripts": 
+    [ 
+        {
+            "matches": ["*://resume.creddle.io/"],
+            "js": [
+                "script.js"
+            ]
+        } 
+    ],
+    "manifest_version": 2
+  }
