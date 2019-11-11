@@ -2,7 +2,7 @@ const SEARCH_TAG = "font-primary link";
 
 const GITHUB_ICON = `
 <i class="fa fa-github" />
-`
+`;
 
 const DEVPOST_ICON = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -90 364.39 314.6" class="fa-fw" style="overflow: visible">
@@ -12,7 +12,11 @@ const DEVPOST_ICON = `
             C208.1,172.8,170.6,195,132.7,195z"></path>
     </g>
 </svg>
-`
+`;
+
+const LINK_ICON = `
+<i>🔗</i>
+`;
 
 function runConversion(node) {
     let link = node.childNodes[1].href;
@@ -23,6 +27,9 @@ function runConversion(node) {
         icon.innerHTML = GITHUB_ICON;
     } else if(link.includes('devpost')) {
         icon.innerHTML = DEVPOST_ICON;
+    } else {
+        icon.style = "text-decoration: none; font-size: 0.75em";
+        icon.innerHTML = LINK_ICON;
     }
     node.appendChild(icon);
 }
